@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4af37 #05060a;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #05060a;
+}
+
+body {
+  background-color: #05060a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #d4af37;
+  color: #05060a;
+}
+
+/* Respect reduced-motion preferences: disable non-essential animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible focus outlines for keyboard nav (WCAG AA) */
+:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
